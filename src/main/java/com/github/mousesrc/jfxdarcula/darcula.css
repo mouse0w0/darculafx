@@ -1,0 +1,88 @@
+/*
+ * container-background-color: #3c3f41;
+ * component-background-color: #45494a;
+ * text-background-color: #3c3f41;
+ * text-color: #bbbbbb;
+ */
+.darcula-container {
+    -fx-background-color: #3c3f41;
+}
+
+.root {
+    -fx-background-color: #3c3f41;
+}
+
+/*pane*/
+.scroll-pane .viewport .content {
+    -fx-background-color: #45494a;
+}
+
+/*text*/
+.text {
+    -fx-fill: #bbbbbb;
+}
+
+.labeled {
+    -fx-text-fill: #bbbbbb;
+}
+
+/*text-field*/
+.text-field {
+    -fx-background-color: #45494a;
+    -fx-text-fill: #bbbbbb;
+    -fx-prompt-text-fill: #bbbbbb;
+    -fx-highlight-fill: #0d293e;
+    -fx-highlight-text-fill: #ffffff;
+}
+
+/*text-area*/
+.text-area {
+    -fx-background-color: #45494a;
+    -fx-text-fill: #bbbbbb;
+    -fx-prompt-text-fill: #bbbbbb;
+    -fx-highlight-fill: #0d293e;
+    -fx-highlight-text-fill: #ffffff;
+}
+
+/*button*/
+.button {
+    -fx-text-fill: #bbbbbb;
+    -fx-background-color: linear-gradient(to bottom, #555a5c, #414648);
+    -fx-border-color: rgb(86,86,86);
+    -fx-border-radius: 3;
+}
+
+.button:default, .button:focus {
+    -fx-background-color: linear-gradient(to bottom, #384f6b, #233143);
+    -fx-border-color: rgb(86,86,86);
+}
+
+.button:disabled  {
+    -fx-text-fill: #777777;
+}
+
+/*progress-bar*/
+.progress-bar  {
+    -fx-min-height: 10px;
+}
+
+.progress-bar .track {
+    -fx-background-color: #45494a;
+    -fx-background-radius: 10px;
+    -fx-border-color: #808080;
+    -fx-border-radius: 10px;
+}
+
+.progress-bar .bar {
+    -fx-background-color: #808080;
+    -fx-background-insets: 2px;
+    -fx-background-radius: 10px;
+}
+
+.progress-bar:indeterminate .bar {
+    
+}
+
+.progress-indicator {
+    -fx-progress-color: #808080;
+}
