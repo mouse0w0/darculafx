@@ -30,7 +30,8 @@
 .toggle-button,
 .combo-box,
 .choice-box,
-.list-view  {
+.list-view,
+.progress-indicator> .determinate-indicator> .indicator  {
     -fx-border-color: #646464;
     -fx-border-radius: 3px;
 }
@@ -40,7 +41,8 @@ Pane,
 .scroll-pane,
 .scroll-pane> .viewport,
 .text-area .scroll-pane .viewport .content,
-.list-view {
+.list-view,
+.progress-indicator> .determinate-indicator> .indicator {
     -fx-background-color: #45494a;
 }
 
