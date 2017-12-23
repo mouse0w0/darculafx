@@ -19,8 +19,14 @@
     -fx-fill: #bbbbbb;
 }
 
-.separator> .line {
-    -fx-border-color: #2d2d2d;
+.text:disabled {
+    -fx-fill: #777777;
+}
+
+.text-field:disabled,
+.text-area:disabled {
+    -fx-text-fill: #777777;
+    -fx-prompt-text-fill: #777777;
 }
 
 /*dacular-border*/
@@ -31,7 +37,9 @@
 .combo-box,
 .choice-box,
 .list-view,
-.progress-indicator> .determinate-indicator> .indicator  {
+.progress-indicator> .determinate-indicator> .indicator,
+.split-menu-button,
+.color-picker {
     -fx-border-color: #646464;
     -fx-border-radius: 3px;
 }
@@ -42,11 +50,23 @@ Pane,
 .scroll-pane> .viewport,
 .text-area .scroll-pane .viewport .content,
 .list-view,
-.progress-indicator> .determinate-indicator> .indicator {
+.progress-indicator> .determinate-indicator> .indicator,
+.context-menu,
+.menu-item {
     -fx-background-color: #45494a;
 }
 
-.scroll-bar:vertical {
+.scroll-pane> .corner,
+.combo-box .list-view> .virtual-flow> .corner {
+    -fx-background-color: #3c3f41;
+}
+
+.separator> .line {
+    -fx-border-color: #2d2d2d;
+}
+
+.scroll-bar:vertical,
+.scroll-bar:horizontal {
     -fx-background-color: #3c3f41;
     -fx-padding: 1px;
 }
@@ -61,11 +81,6 @@ Pane,
 
 .scroll-bar:vertical> .thumb:hover {
     -fx-background-color: linear-gradient(to right, #707070, #646464);
-}
-
-.scroll-bar:horizontal {
-    -fx-background-color: #3c3f41;
-    -fx-padding: 1px;
 }
 
 .scroll-bar:horizontal> .thumb {
@@ -85,11 +100,6 @@ Pane,
     -fx-background-color: transparent;
 }
 
-.scroll-pane> .corner,
-.combo-box .list-view> .virtual-flow> .corner {
-    -fx-background-color: #3c3f41;
-}
-
 .text-field,
 .text-area {
     -fx-background-color: #45494a;
@@ -100,14 +110,10 @@ Pane,
     -fx-highlight-text-fill: #bbbbbb;
 }
 
-.text-field:disabled,
-.text-area:disabled {
-    -fx-text-fill: #777777;
-    -fx-prompt-text-fill: #777777;
-}
-
 .button,
-.toggle-button {
+.toggle-button,
+.split-menu-button,
+.color-picker {
     -fx-text-fill: #bbbbbb;
     -fx-background-color: linear-gradient(to bottom, #555a5c, #414648);
     -fx-background-insets: 0px;
@@ -144,12 +150,23 @@ Pane,
 }
 
 .button:disabled,
-.toggle-button:disabled  {
+.toggle-button:disabled,
+.split-menu-button:disabled {
     -fx-text-fill: #777777;
     -fx-background-color: transparent;
 }
 
-.progress-bar  {
+.split-menu-button> .label {
+    -fx-background-color: transparent;
+}
+
+.split-menu-button> .arrow-button,
+.combo-box> .arrow-button {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent transparent transparent #646464;
+}
+
+.progress-bar {
     -fx-min-height: 11px;
 }
 
@@ -164,10 +181,6 @@ Pane,
     -fx-background-color: #808080;
     -fx-background-insets: 2px;
     -fx-background-radius: 10px;
-}
-
-.progress-bar:indeterminate> .bar {
-    
 }
 
 .progress-indicator {
@@ -195,6 +208,11 @@ Pane,
     -fx-stroke: #bbbbbb;
 }
 
+.combo-box,
+.choice-box  {
+    -fx-background-color: transparent;
+}
+
 .radio-button> .radio {
     -fx-background-color: linear-gradient(rgb(103, 109, 112), rgb(83, 88, 90));
     -fx-border-color: rgba(40,40,40,200);
@@ -218,14 +236,4 @@ Pane,
 .check-box:disabled:selected> .box> .mark  {
     -fx-background-color: linear-gradient(#787878 95%, #3c3c3c 5%);
     -fx-background-insets: 0px;
-}
-
-.combo-box,
-.choice-box  {
-    -fx-background-color: transparent;
-    -fx-background-radius: 3px;
-}
-
-.combo-box> .arrow-button {
-    -fx-border-color: transparent transparent transparent #646464;
 }
