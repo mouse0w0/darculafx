@@ -66,7 +66,9 @@ FlowPane,
 .progress-indicator> .determinate-indicator> .indicator,
 .context-menu,
 .menu-item,
-.date-picker  {
+.date-picker,
+.text-field,
+.text-area {
     -fx-background-color: #45494a;
 }
 
@@ -82,19 +84,20 @@ FlowPane,
 }
 
 .text-field,
-.text-area {
-    -fx-background-color: #45494a;
+.text-area,
+.button,
+.toggle-button,
+.split-menu-button,
+.color-picker {
     -fx-background-radius: 3px;
 }
 
 .button,
 .toggle-button,
 .split-menu-button,
-.color-picker{
-    -fx-text-fill: #bbbbbb;
+.color-picker {
     -fx-background-color: linear-gradient(to bottom, #555a5c, #414648);
     -fx-background-insets: 0px;
-    -fx-background-radius: 3px;
 }
 
 /* right-node */
@@ -119,29 +122,11 @@ FlowPane,
     -fx-background-color: linear-gradient(to bottom, #384f6b, #233143);
 }
 
-.button:pressed, 
-.button:focus,
-.toggle-button:pressed,
-.toggle-button:focus {
-    -fx-border-color: linear-gradient(to bottom,
-                ladder(
-                    -fx-color,
-                    derive(-fx-color,30%) 0%,
-                    derive(-fx-color,20%) 40%,
-                    derive(-fx-color,25%) 60%,
-                    derive(-fx-color,55%) 80%,
-                    derive(-fx-color,55%) 90%,
-                    derive(-fx-color,75%) 100%
-                ),
-                ladder(
-                    -fx-color,
-                    derive(-fx-color,20%) 0%,
-                    derive(-fx-color,10%) 20%,
-                    derive(-fx-color,5%) 40%,
-                    derive(-fx-color,-2%) 60%,
-                    derive(-fx-color,-5%) 100%
-                ));
-    /*linear-gradient(to top, rgba(96,175,255,20), rgba(96,175,255,70), rgba(96,175,255,130), rgba(96,175,255,50), rgba(96,175,255,0)) linear-gradient(to right, rgba(96,175,255,20), rgba(96,175,255,70), rgba(96,175,255,130), rgba(96,175,255,50), rgba(96,175,255,0)) linear-gradient(to bottom, rgba(96,175,255,20), rgba(96,175,255,70), rgba(96,175,255,130), rgba(96,175,255,50), rgba(96,175,255,0)) linear-gradient(to left, rgba(96,175,255,20), rgba(96,175,255,70), rgba(96,175,255,130), rgba(96,175,255,50), rgba(96,175,255,0));*/
+.button:armed, 
+.toggle-button:armed {
+    -fx-border-color: linear-gradient(to top, #60afff64, #60afffb4, #60afff78, #60afff46) linear-gradient(to right, #60afff64, #60afffb4, #60afff78, #60afff46) linear-gradient(to bottom, #60afff64, #60afffb4, #60afff78, #60afff46) linear-gradient(to left, #60afff64, #60afffb4, #60afff78, #60afff46);
+    -fx-border-width: 2px;
+    /*linear-gradient(to top, #60afff32, #60afff82, #60afff46, #60afff14) linear-gradient(to right, #60afff32, #60afff82, #60afff46, #60afff14) linear-gradient(to bottom, #60afff32, #60afff82, #60afff46, #60afff14) linear-gradient(to left, #60afff32, #60afff82, #60afff46, #60afff14);*/
 }
 
 .button:disabled,
