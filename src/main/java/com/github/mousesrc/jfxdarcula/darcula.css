@@ -19,6 +19,14 @@
     -fx-fill: #bbbbbb;
 }
 
+.text-field,
+.text-area {
+    -fx-text-fill: #bbbbbb;
+    -fx-prompt-text-fill: #bbbbbb;
+    -fx-highlight-fill: #4b6baf;
+    -fx-highlight-text-fill: #bbbbbb;
+}
+
 .text:disabled {
     -fx-fill: #777777;
 }
@@ -50,6 +58,7 @@
 
 /*dacular-background*/
 Pane,
+FlowPane,
 .scroll-pane,
 .scroll-pane> .viewport,
 .text-area .scroll-pane .viewport .content,
@@ -62,7 +71,9 @@ Pane,
 }
 
 .scroll-pane> .corner,
-.combo-box .list-view> .virtual-flow> .corner {
+.combo-box .list-view> .virtual-flow> .corner,
+.scroll-bar:vertical,
+.scroll-bar:horizontal {
     -fx-background-color: #3c3f41;
 }
 
@@ -74,10 +85,6 @@ Pane,
 .text-area {
     -fx-background-color: #45494a;
     -fx-background-radius: 3px;
-    -fx-text-fill: #bbbbbb;
-    -fx-prompt-text-fill: #bbbbbb;
-    -fx-highlight-fill: #4b6baf;
-    -fx-highlight-text-fill: #bbbbbb;
 }
 
 .button,
@@ -94,7 +101,6 @@ Pane,
 .split-menu-button> .arrow-button,
 .combo-box> .arrow-button,
 .date-picker> .arrow-button {
-    -fx-text-fill: #bbbbbb;
     -fx-background-color: linear-gradient(to bottom, #555a5c, #414648);
     -fx-background-insets: 0px;
     -fx-background-radius: 0px 3px 3px 0px;
@@ -147,7 +153,6 @@ Pane,
 
 .scroll-bar:vertical,
 .scroll-bar:horizontal {
-    -fx-background-color: #3c3f41;
     -fx-padding: 1px;
 }
 
