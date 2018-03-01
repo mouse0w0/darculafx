@@ -54,11 +54,15 @@
 .date-picker {
     -fx-border-color: #646464;
     -fx-border-radius: 3px;
+    -fx-background-radius: 3px;
 }
 
 /*dacular-background*/
+.dacular-background,
 Pane,
 FlowPane,
+HBox,
+VBox,
 .scroll-pane,
 .scroll-pane> .viewport,
 .text-area .scroll-pane .viewport .content,
@@ -72,6 +76,7 @@ FlowPane,
     -fx-background-color: #45494a;
 }
 
+.dacular-background-dark,
 .scroll-pane> .corner,
 .combo-box .list-view> .virtual-flow> .corner,
 .scroll-bar:vertical,
@@ -81,15 +86,6 @@ FlowPane,
 
 .separator> .line {
     -fx-border-color: #2d2d2d;
-}
-
-.text-field,
-.text-area,
-.button,
-.toggle-button,
-.split-menu-button,
-.color-picker {
-    -fx-background-radius: 3px;
 }
 
 .button,
@@ -118,15 +114,23 @@ FlowPane,
     -fx-border-radius: 3px 0px 0px 3px;
 }
 
-.button:default{
-    -fx-background-color: linear-gradient(to bottom, #384f6b, #233143);
-}
-
+/* armed */
 .button:armed, 
-.toggle-button:armed {
+.toggle-button:armed,
+.radio-button:armed> .radio,
+.check-box:armed> .box,
+.combo-box:armed,
+.choice-box:pressed,
+.split-menu-button:armed,
+.color-picker:armed {
     -fx-border-color: linear-gradient(to top, #60afff64, #60afffb4, #60afff78, #60afff46) linear-gradient(to right, #60afff64, #60afffb4, #60afff78, #60afff46) linear-gradient(to bottom, #60afff64, #60afffb4, #60afff78, #60afff46) linear-gradient(to left, #60afff64, #60afffb4, #60afff78, #60afff46);
     -fx-border-width: 2px;
+    -fx-border-insets: -1px;
     /*linear-gradient(to top, #60afff32, #60afff82, #60afff46, #60afff14) linear-gradient(to right, #60afff32, #60afff82, #60afff46, #60afff14) linear-gradient(to bottom, #60afff32, #60afff82, #60afff46, #60afff14) linear-gradient(to left, #60afff32, #60afff82, #60afff46, #60afff14);*/
+}
+
+.button:default{
+    -fx-background-color: linear-gradient(to bottom, #384f6b, #233143);
 }
 
 .button:disabled,
@@ -216,22 +220,24 @@ FlowPane,
 .choice-box  {
     -fx-background-color: transparent;
 }
-
-.radio-button> .radio {
+.radio-button> .radio,
+.check-box> .box {
     -fx-background-color: linear-gradient(rgb(103, 109, 112), rgb(83, 88, 90));
-    -fx-border-color: rgba(40,40,40,200);
+    -fx-border-color: #282828c8;
+}
+    
+.radio-button> .radio {
     -fx-border-radius: 50%;
 }
 
 .check-box> .box {
-    -fx-background-color: linear-gradient(rgb(103, 109, 112), rgb(83, 88, 90));
     -fx-background-radius: 3px;
-    -fx-border-color: rgba(40,40,40,200);
     -fx-border-radius: 3px;
 }
 
 .radio-button:selected> .radio> .dot,
-.check-box:selected> .box> .mark {
+.check-box:selected> .box> .mark,
+.check-box:indeterminate> .box> .mark {
     -fx-background-color: linear-gradient(#aaaaaa 95%, #1e1e1e 5%);
     -fx-background-insets: 0px;
 }
@@ -240,4 +246,8 @@ FlowPane,
 .check-box:disabled:selected> .box> .mark  {
     -fx-background-color: linear-gradient(#787878 95%, #3c3c3c 5%);
     -fx-background-insets: 0px;
+}
+
+.combo-box:editable> .text-field {
+    -fx-border-color: none;
 }
