@@ -1,4 +1,4 @@
-/*default-setting*/
+/* default setting */
 .root {
     -darcula-background-color: #3c3f41;
     -darcula-background-bright-color: #45494a;
@@ -35,12 +35,15 @@
 .text-area:disabled,
 .button:disabled,
 .toggle-button:disabled,
-.split-menu-button:disabled {
+.split-menu-button:disabled,
+.color-picker:disabled,
+.date-picker:disabled,
+.menu-button:disabled {
     -fx-text-fill: #777777;
     -fx-prompt-text-fill: #777777;
 }
 
-/*dacular-border*/
+/* dacular component border */
 .text-field,
 .text-area,
 .button,
@@ -51,13 +54,14 @@
 .progress-indicator> .determinate-indicator> .indicator,
 .split-menu-button,
 .color-picker,
-.date-picker {
+.date-picker,
+.menu-button {
     -fx-border-color: #646464;
     -fx-border-radius: 3px;
     -fx-background-radius: 3px;
 }
 
-/*dacular-background*/
+/* dacular background */
 .dacular-background,
 Pane,
 FlowPane,
@@ -72,7 +76,8 @@ VBox,
 .menu-item,
 .date-picker,
 .text-field,
-.text-area {
+.text-area,
+.menu-bar {
     -fx-background-color: #45494a;
 }
 
@@ -88,18 +93,21 @@ VBox,
     -fx-border-color: #2d2d2d;
 }
 
+/* button */
 .button,
 .toggle-button,
 .split-menu-button,
-.color-picker {
+.color-picker,
+.menu-button {
     -fx-background-color: linear-gradient(to bottom, #555a5c, #414648);
     -fx-background-insets: 0px;
 }
 
-/* right-node */
+/* right button */
 .split-menu-button> .arrow-button,
 .combo-box> .arrow-button,
-.date-picker> .arrow-button {
+.date-picker> .arrow-button,
+.color-picker:editable> .arrow-button {
     -fx-background-color: linear-gradient(to bottom, #555a5c, #414648);
     -fx-background-insets: 0px;
     -fx-background-radius: 0px 3px 3px 0px;
@@ -107,7 +115,7 @@ VBox,
     -fx-border-radius: 0px 3px 3px 0px;
 }
 
-/* left-node */
+/* left node */
 .date-picker> .date-picker-display-node{
     -fx-border-color: transparent;
     -fx-background-radius: 3px 0px 0px 3px;
@@ -122,22 +130,35 @@ VBox,
 .combo-box:armed,
 .choice-box:pressed,
 .split-menu-button:armed,
-.color-picker:armed {
+.color-picker:armed,
+.menu-button:armed {
     -fx-border-color: linear-gradient(to top, #60afff64, #60afffb4, #60afff78, #60afff46) linear-gradient(to right, #60afff64, #60afffb4, #60afff78, #60afff46) linear-gradient(to bottom, #60afff64, #60afffb4, #60afff78, #60afff46) linear-gradient(to left, #60afff64, #60afffb4, #60afff78, #60afff46);
     -fx-border-width: 2px;
     -fx-border-insets: -1px;
     /*linear-gradient(to top, #60afff32, #60afff82, #60afff46, #60afff14) linear-gradient(to right, #60afff32, #60afff82, #60afff46, #60afff14) linear-gradient(to bottom, #60afff32, #60afff82, #60afff46, #60afff14) linear-gradient(to left, #60afff32, #60afff82, #60afff46, #60afff14);*/
 }
 
-.button:default{
+.button:default {
     -fx-background-color: linear-gradient(to bottom, #384f6b, #233143);
+}
+
+.toggle-button:selected {
+    -fx-background-color: linear-gradient(to top, #555a5c, #414648);
 }
 
 .button:disabled,
 .toggle-button:disabled,
 .split-menu-button:disabled,
-.split-menu-button> .label {
+.menu-button:disabled {
     -fx-background-color: transparent;
+}
+
+.combo-box:editable> .text-field {
+    -fx-border-color: none;
+}
+
+.split-menu-button> .label {
+    -fx-background-color: none;
 }
 
 .scroll-bar:vertical,
@@ -246,8 +267,4 @@ VBox,
 .check-box:disabled:selected> .box> .mark  {
     -fx-background-color: linear-gradient(#787878 95%, #3c3c3c 5%);
     -fx-background-insets: 0px;
-}
-
-.combo-box:editable> .text-field {
-    -fx-border-color: none;
 }
