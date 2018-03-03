@@ -76,8 +76,7 @@ VBox,
 .menu-item,
 .date-picker,
 .text-field,
-.text-area,
-.menu-bar {
+.text-area {
     -fx-background-color: #45494a;
 }
 
@@ -85,12 +84,12 @@ VBox,
 .scroll-pane> .corner,
 .combo-box .list-view> .virtual-flow> .corner,
 .scroll-bar:vertical,
-.scroll-bar:horizontal {
+.scroll-bar:horizontal,
+.menu-bar,
+.menu-bar> .container,
+.tool-bar,
+.tool-bar> .container {
     -fx-background-color: #3c3f41;
-}
-
-.separator> .line {
-    -fx-border-color: #2d2d2d;
 }
 
 /* button */
@@ -101,6 +100,10 @@ VBox,
 .menu-button {
     -fx-background-color: linear-gradient(to bottom, #555a5c, #414648);
     -fx-background-insets: 0px;
+}
+
+.button:default {
+    -fx-background-color: linear-gradient(to bottom, #384f6b, #233143);
 }
 
 /* right button */
@@ -138,8 +141,24 @@ VBox,
     /*linear-gradient(to top, #60afff32, #60afff82, #60afff46, #60afff14) linear-gradient(to right, #60afff32, #60afff82, #60afff46, #60afff14) linear-gradient(to bottom, #60afff32, #60afff82, #60afff46, #60afff14) linear-gradient(to left, #60afff32, #60afff82, #60afff46, #60afff14);*/
 }
 
-.button:default {
-    -fx-background-color: linear-gradient(to bottom, #384f6b, #233143);
+.radio-button> .radio,
+.check-box> .box {
+    -fx-background-color: linear-gradient(to bottom, #6e6e6e, #5f5f5f);
+    -fx-border-color: #282828
+}
+
+.radio-button:focus> .radio,
+.check-box:focus> .box {
+    -fx-background-color: linear-gradient(to bottom, #787878, #4b4b4b);
+}
+
+.radio-button:focus:armed> .radio,
+.check-box:focus:armed> .box {
+    -fx-background-color: linear-gradient(to bottom, #646464, #373737);
+}
+
+.separator> .line {
+    -fx-border-color: #2b2b2b;
 }
 
 .toggle-button:selected {
@@ -150,6 +169,11 @@ VBox,
 .toggle-button:disabled,
 .split-menu-button:disabled,
 .menu-button:disabled {
+    -fx-background-color: transparent;
+}
+
+.combo-box,
+.choice-box  {
     -fx-background-color: transparent;
 }
 
@@ -236,16 +260,6 @@ VBox,
 .slider> .axis> .axis-minor-tick-mark {
     -fx-stroke: #bbbbbb;
 }
-
-.combo-box,
-.choice-box  {
-    -fx-background-color: transparent;
-}
-.radio-button> .radio,
-.check-box> .box {
-    -fx-background-color: linear-gradient(rgb(103, 109, 112), rgb(83, 88, 90));
-    -fx-border-color: #282828c8;
-}
     
 .radio-button> .radio {
     -fx-border-radius: 50%;
@@ -267,4 +281,30 @@ VBox,
 .check-box:disabled:selected> .box> .mark  {
     -fx-background-color: linear-gradient(#787878 95%, #3c3c3c 5%);
     -fx-background-insets: 0px;
+}
+
+.menu-bar {
+    -fx-border-color: linear-gradient(#555555, #282828);
+    -fx-border-width: 0 0 2px 0;
+}
+
+.menu-bar> .container> .menu {
+    -fx-background-color: none;
+    -fx-background-radius: 0;
+    -fx-border-color: none;
+    -fx-border-radius: 0;
+}
+
+.context-menu {
+    -fx-border-color: #646464;
+}
+
+.menu-bar> .container> .menu:hover,
+.menu-bar> .container> .menu:focus,
+.menu-bar> .container> .menu:pressed,
+.menu-bar> .container> .menu:showing,
+.menu-item:hover,
+.menu-item:focus,
+.menu-item:pressed {
+    -fx-background-color: #4b6eaf;
 }
