@@ -1,14 +1,12 @@
 /* default setting */
 .root {
-    -darcula-background-color: #3c3f41;
-    -darcula-background-bright-color: #45494a;
-    -darcula-background-dark-color: #2e3032;
+    -darcula-background: #3c3f41;
+    -darcula-background-bright: #45494a;
+    -darcula-background-dark: #2e3032;
     
-    -darcula-text-color: #bbbbbb;
-    -darcula-text-disabled-color: #777777;
-    
-    -fx-color: #45494a;
-    -fx-background-color: #45494a;
+    -darcula-text: #bbbbbb;
+    -darcula-text-disabled: #777777;
+    -darcula-text-highlight-background: #4b6baf;
 }
 
 *:disabled  {
@@ -99,7 +97,7 @@ VBox,
 .color-picker,
 .menu-button {
     -fx-background-color: linear-gradient(to bottom, #555a5c, #414648);
-    -fx-background-insets: 0px;
+    -fx-background-insets: 0;
 }
 
 .button:default {
@@ -112,17 +110,25 @@ VBox,
 .date-picker> .arrow-button,
 .color-picker:editable> .arrow-button {
     -fx-background-color: linear-gradient(to bottom, #555a5c, #414648);
-    -fx-background-insets: 0px;
-    -fx-background-radius: 0px 3px 3px 0px;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0 3px 3px 0;
     -fx-border-color: transparent transparent transparent #646464;
-    -fx-border-radius: 0px 3px 3px 0px;
+    -fx-border-radius: 0 3px 3px 0;
+}
+
+.combo-box> .arrow-button,
+.date-picker> .arrow-button,
+.split-menu-button:disabled> .arrow-button {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent transparent transparent #646464;
+    -fx-border-radius: 0 3px 3px 0;
 }
 
 /* left node */
 .date-picker> .date-picker-display-node{
     -fx-border-color: transparent;
-    -fx-background-radius: 3px 0px 0px 3px;
-    -fx-border-radius: 3px 0px 0px 3px;
+    -fx-background-radius: 3px 0 0 3px;
+    -fx-border-radius: 3px 0 0 3px;
 }
 
 /* armed */
@@ -178,11 +184,11 @@ VBox,
 }
 
 .combo-box:editable> .text-field {
-    -fx-border-color: none;
+    -fx-border-color: transparent;
 }
 
 .split-menu-button> .label {
-    -fx-background-color: none;
+    -fx-background-color: transparent;
 }
 
 .scroll-bar:vertical,
@@ -233,7 +239,7 @@ VBox,
 .progress-bar> .bar {
     -fx-background-color: #808080;
     -fx-background-insets: 2px;
-    -fx-background-radius: 10px;
+    -fx-background-radius: 10;
 }
 
 .progress-indicator {
@@ -274,37 +280,53 @@ VBox,
 .check-box:selected> .box> .mark,
 .check-box:indeterminate> .box> .mark {
     -fx-background-color: linear-gradient(#aaaaaa 95%, #1e1e1e 5%);
-    -fx-background-insets: 0px;
+    -fx-background-insets: 0;
 }
 
 .radio-button:disabled:selected> .radio> .dot,
 .check-box:disabled:selected> .box> .mark  {
     -fx-background-color: linear-gradient(#787878 95%, #3c3c3c 5%);
-    -fx-background-insets: 0px;
+    -fx-background-insets: 0;
 }
 
 .menu-bar {
-    -fx-border-color: linear-gradient(#555555, #282828);
+    -fx-border-color: linear-gradient(#282828, #555555);
     -fx-border-width: 0 0 2px 0;
+    -fx-padding: 0;
 }
 
 .menu-bar> .container> .menu {
-    -fx-background-color: none;
+    -fx-background-color: transparent;
     -fx-background-radius: 0;
-    -fx-border-color: none;
+    -fx-border-color: transparent;
     -fx-border-radius: 0;
 }
 
 .context-menu {
-    -fx-border-color: #646464;
+    -fx-border-color: #515151;
+    -fx-padding: 0;
+}
+
+.context-menu .separator:horizontal .line {
+    -fx-border-color: #515151 transparent transparent transparent;
+    -fx-border-insets: 1 0 0 0;
 }
 
 .menu-bar> .container> .menu:hover,
-.menu-bar> .container> .menu:focus,
+.menu-bar> .container> .menu:focused,
 .menu-bar> .container> .menu:pressed,
 .menu-bar> .container> .menu:showing,
+.menu:hover,
+.menu:focused,
+.menu:pressed,
+.menu:showing,
 .menu-item:hover,
-.menu-item:focus,
+.menu-item:focused,
 .menu-item:pressed {
     -fx-background-color: #4b6eaf;
+}
+
+.tool-bar {
+    -fx-border-color: transparent transparent #303334 transparent;
+    -fx-border-insets: 0 0 1 0;
 }

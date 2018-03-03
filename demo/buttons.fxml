@@ -5,7 +5,6 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-
 <VBox prefHeight="282.0" prefWidth="550.0" spacing="10.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <FlowPane hgap="10.0">
@@ -47,8 +46,8 @@
       </FlowPane>
       <FlowPane hgap="10.0">
          <children>
-            <DatePicker />
-            <DatePicker editable="false" />
+            <DatePicker promptText="Text" />
+            <DatePicker editable="false" promptText="Text" />
             <DatePicker disable="true" />
          </children>
       </FlowPane>
