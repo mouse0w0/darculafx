@@ -37,11 +37,25 @@
               <MenuItem mnemonicParsing="false" text="About" />
             </items>
           </Menu>
+            <Menu mnemonicParsing="false" text="Menu">
+              <items>
+                <MenuItem mnemonicParsing="false" text="Action 1" />
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Menu">
+              <items>
+                <MenuItem mnemonicParsing="false" text="Action 1" />
+              </items>
+            </Menu>
         </menus>
       </MenuBar>
-      <ToolBar prefHeight="40.0" prefWidth="200.0">
+      <ToolBar>
         <items>
           <Button mnemonicParsing="false" text="Button" />
+            <ToggleButton mnemonicParsing="false" text="ToggleButton" />
+            <Separator />
+            <ComboBox maxHeight="20.0" minHeight="20.0" prefHeight="20.0" prefWidth="80.0" />
+            <ChoiceBox maxHeight="20.0" minHeight="20.0" prefHeight="20.0" prefWidth="80.0" />
         </items>
       </ToolBar>
    </children>
