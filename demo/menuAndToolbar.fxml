@@ -22,7 +22,7 @@
                   <SeparatorMenuItem mnemonicParsing="false" />
                   <Menu mnemonicParsing="false" text="Unspecified Menu">
                     <items>
-                      <MenuItem mnemonicParsing="false" text="Action 1" />
+                      <MenuItem disable="true" mnemonicParsing="false" text="Action 1" />
                     </items>
                   </Menu>
             </items>
