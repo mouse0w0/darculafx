@@ -125,8 +125,8 @@
 .date-picker,
 .menu-button {
     -fx-border-color: #646464;
-    -fx-border-radius: 3px;
-    -fx-background-radius: 3px;
+    -fx-border-radius: 3;
+    -fx-background-radius: 3;
 }
 
 .combo-box:hover,
@@ -192,6 +192,7 @@ StackPane,
     -fx-border-radius: 0 3 3 0;
 }
 
+/* stack pane background fix*/
 .combo-box> .arrow-button,
 .date-picker> .arrow-button,
 .split-menu-button:disabled> .arrow-button {
@@ -200,7 +201,10 @@ StackPane,
     -fx-border-radius: 0 3 3 0;
 }
 
-.arrow-button {
+.arrow-button,
+.menu-item> .left-container,
+.menu-item> .right-container,
+.menu-item> .graphic-container {
     -fx-background-color: transparent;
 }
 
@@ -213,7 +217,7 @@ StackPane,
 
 .arrow:disabled,
 .left-arrow:disabled,
-.right-arrow:disabled  {
+.right-arrow:disabled {
     -fx-background-color: #777777;
 }
     
@@ -236,9 +240,13 @@ StackPane,
 .split-menu-button:armed,
 .color-picker:armed,
 .menu-button:armed {
-    -fx-border-color: linear-gradient(to top, #60afff64, #60afffb4, #60afff78, #60afff46) linear-gradient(to right, #60afff64, #60afffb4, #60afff78, #60afff46) linear-gradient(to bottom, #60afff64, #60afffb4, #60afff78, #60afff46) linear-gradient(to left, #60afff64, #60afffb4, #60afff78, #60afff46);
+    -fx-border-color: #60afff32, #60afff64, #60afffb4, #60afff78, #60afff46;
+    -fx-border-width: 1, 1, 1, 1, 1;
+    -fx-border-radius: 3;
+    -fx-border-insets: 4, 3, 2, 1, 0;
+    /*-fx-border-color: linear-gradient(to top, #60afff64, #60afffb4, #60afff78, #60afff46) linear-gradient(to right, #60afff64, #60afffb4, #60afff78, #60afff46) linear-gradient(to bottom, #60afff64, #60afffb4, #60afff78, #60afff46) linear-gradient(to left, #60afff64, #60afffb4, #60afff78, #60afff46);
     -fx-border-width: 2px;
-    -fx-border-insets: -1px;
+    -fx-border-insets: -1px;*/
     /*linear-gradient(to top, #60afff32, #60afff82, #60afff46, #60afff14) linear-gradient(to right, #60afff32, #60afff82, #60afff46, #60afff14) linear-gradient(to bottom, #60afff32, #60afff82, #60afff46, #60afff14) linear-gradient(to left, #60afff32, #60afff82, #60afff46, #60afff14);*/
 }
 
@@ -406,7 +414,8 @@ StackPane,
 }
 
 .radio-button:disabled:selected> .radio> .dot,
-.check-box:disabled:selected> .box> .mark  {
+.check-box:disabled:selected> .box> .mark,
+.check-box:disabled:indeterminate> .box> .mark   {
     -fx-background-color: linear-gradient(#787878 95%, #3c3c3c 5%);
 }
 
@@ -422,6 +431,8 @@ StackPane,
     -fx-background-radius: 0;
     -fx-border-color: transparent;
     -fx-border-radius: 0;
+    -fx-border-insets: 0;
+    -fx-border-width: 0;
 }
 
 .context-menu {
@@ -446,6 +457,21 @@ StackPane,
 .menu-item:focused,
 .menu-item:pressed {
     -fx-background-color: #4b6eaf /*75 110 175*/
+}
+
+.radio-menu-item:checked > .left-container > .radio,
+.check-menu-item:checked > .left-container > .check {
+    -fx-background-color: #bbbbbb;
+}
+
+.radio-menu-item:disabled:checked > .left-container > .radio,
+.check-menu-item:disabled:checked > .left-container > .check {
+    -fx-background-color: #777777;
+}
+
+.radio-menu-item:focused:checked > .left-container > .radio,
+.check-menu-item:focused:checked > .left-container > .check {
+    -fx-background-color: #ffffff;
 }
 
 /*tool-bar*/
@@ -495,6 +521,7 @@ StackPane,
     -fx-border-insets: 0;
 }
 
+/*tab-pane*/
 .tab-pane> .tab-header-area {
     -fx-padding: 0;
 }
@@ -505,24 +532,84 @@ StackPane,
     -fx-border-width: 1 0 1 0;
 }
 
-.tab-pane> .tab-header-area> .headers-region> .tab:top {
+.tab-pane> .tab-header-area> .headers-region> .tab {
     -fx-background-color: transparent;
     -fx-background-radius: 0;
     -fx-background-insets: 0;
-    -fx-border-color: transparent #4b4b4b transparent transparent;
-    -fx-border-width: 0 1 0 0;
     -fx-border-insets: 0;
 }
 
+.tab-pane> .tab-header-area> .headers-region> .tab:left {
+    -fx-border-color: transparent transparent transparent #4b4b4b;
+    -fx-border-width: 0 0 0 1;
+}
+
+.tab-pane> .tab-header-area> .headers-region> .tab:left:selected {
+    -fx-background-color: linear-gradient(to bottom, #515658 87.5%, #4a7a88 12.5%);
+}
+
+.tab-pane:focused> .tab-header-area> .headers-region> .tab:left:selected {
+    -fx-background-color: linear-gradient(to bottom, #515658 87.5%, #439eb8 12.5%);
+}
+
+.tab-pane> .tab-header-area> .headers-region> .tab:right {
+    -fx-border-color: transparent #4b4b4b transparent transparent ;
+    -fx-border-width: 0 1 0 0;
+}
+
+.tab-pane> .tab-header-area> .headers-region> .tab:right:selected {
+    -fx-background-color: linear-gradient(to bottom, #515658 87.5%, #4a7a88 12.5%);
+}
+
+.tab-pane:focused> .tab-header-area> .headers-region> .tab:right:selected {
+    -fx-background-color: linear-gradient(to bottom, #515658 87.5%, #439eb8 12.5%);
+}
+
+.tab-pane> .tab-header-area> .headers-region> .tab:top {
+    -fx-border-color: transparent #4b4b4b transparent transparent;
+    -fx-border-width: 0 1 0 0;
+}
+
 .tab-pane> .tab-header-area> .headers-region> .tab:top:selected {
-    -fx-background-color: linear-gradient(to bottom, #515658 87%, #4a7a88 12.5%);
+    -fx-background-color: linear-gradient(to bottom, #515658 87.5%, #4a7a88 12.5%);
 }
 
 .tab-pane:focused> .tab-header-area> .headers-region> .tab:top:selected {
     -fx-background-color: linear-gradient(to bottom, #515658 87.5%, #439eb8 12.5%);
 }
 
+.tab-pane> .tab-header-area> .headers-region> .tab:bottom {
+    -fx-border-color: transparent transparent transparent #4b4b4b;
+    -fx-border-width: 0 0 0 1;
+}
+
+.tab-pane> .tab-header-area> .headers-region> .tab:bottom:selected {
+    -fx-background-color: linear-gradient(to bottom, #515658 87.5%, #4a7a88 12.5%);
+}
+
+.tab-pane:focused> .tab-header-area> .headers-region> .tab:bottom:selected {
+    -fx-background-color: linear-gradient(to bottom, #515658 87.5%, #439eb8 12.5%);
+}
+
 .tab-pane> .tab-header-area> .headers-region> .tab:selected .focus-indicator{
     -fx-border-color: transparent;
     -fx-border-insets: 0;
+}
+
+/*titled-pane*/
+.titled-pane> .content {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.titled-pane> .title {
+    -fx-background-color: linear-gradient(to bottom, #3b3e40, #383b3c);
+    -fx-border-color: #4b4b4b transparent #242627 transparent;
+    -fx-border-width: 1 0 1 0;
+}
+
+.titled-pane:focused> .title {
+    -fx-background-color: linear-gradient(to bottom, #434f60, #414c5d);
+    -fx-border-color: #4b4b4b transparent #2a313c transparent;
+    -fx-border-width: 1 0 1 0;
 }
