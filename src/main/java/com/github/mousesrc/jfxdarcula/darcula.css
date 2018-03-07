@@ -153,8 +153,6 @@ StackPane,
 .context-menu,
 .menu-item,
 .date-picker,
-.text-field,
-.text-area,
 .scroll-pane> .corner,
 .combo-box .list-view> .virtual-flow> .corner,
 .scroll-bar:vertical,
@@ -166,6 +164,20 @@ StackPane,
 .tab-pane> .tab-header-area> .tab-header-background,
 .split-pane {
     -fx-background-color: #3c3f41;
+}
+
+.text-field,
+.text-area {
+    -fx-background-color: #45494a;
+}
+
+.text-field:disabled,
+.text-area:disabled {
+    -fx-background-color: transparent;
+}
+
+.text-field> Pane {
+    -fx-background-color: transparent;
 }
 
 /* button */
@@ -184,23 +196,20 @@ StackPane,
 
 /* right button */
 .split-menu-button> .arrow-button,
-.color-picker:editable> .arrow-button {
-    -fx-background-color: linear-gradient(to bottom, #555a5c, #414648);
+.color-picker:editable> .arrow-button,
+.combo-box> .arrow-button,
+.date-picker> .arrow-button,
+.split-menu-button:disabled> .arrow-button {
+    /*-fx-background-color: linear-gradient(to bottom, #555a5c, #414648);
     -fx-background-insets: 0;
-    -fx-background-radius: 0 3 3 0;
+    -fx-background-radius: 0 3 3 0;*/
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
     -fx-border-color: transparent transparent transparent #646464;
     -fx-border-radius: 0 3 3 0;
 }
 
 /* stack pane background fix*/
-.combo-box> .arrow-button,
-.date-picker> .arrow-button,
-.split-menu-button:disabled> .arrow-button {
-    -fx-background-color: transparent;
-    -fx-border-color: transparent transparent transparent #646464;
-    -fx-border-radius: 0 3 3 0;
-}
-
 .arrow-button,
 .menu-item> .left-container,
 .menu-item> .right-container,
@@ -250,22 +259,6 @@ StackPane,
     /*linear-gradient(to top, #60afff32, #60afff82, #60afff46, #60afff14) linear-gradient(to right, #60afff32, #60afff82, #60afff46, #60afff14) linear-gradient(to bottom, #60afff32, #60afff82, #60afff46, #60afff14) linear-gradient(to left, #60afff32, #60afff82, #60afff46, #60afff14);*/
 }
 
-.radio-button> .radio,
-.check-box> .box {
-    -fx-background-color: linear-gradient(to bottom, #6e6e6e, #5f5f5f);
-    -fx-border-color: #282828
-}
-
-.radio-button:focus> .radio,
-.check-box:focus> .box {
-    -fx-background-color: linear-gradient(to bottom, #787878, #4b4b4b);
-}
-
-.radio-button:focus:armed> .radio,
-.check-box:focus:armed> .box {
-    -fx-background-color: linear-gradient(to bottom, #646464, #373737);
-}
-
 .separator:vertical> .line {
     -fx-border-color: transparent transparent transparent #2b2b2b;
     -fx-border-width: 0 0 0 1;
@@ -283,16 +276,18 @@ StackPane,
 .button:disabled,
 .toggle-button:disabled,
 .split-menu-button:disabled,
-.menu-button:disabled {
+.menu-button:disabled,
+.color-picker:disabled {
     -fx-background-color: transparent;
 }
 
 .combo-box,
-.choice-box  {
+.choice-box {
     -fx-background-color: transparent;
 }
 
 .combo-box:editable> .text-field {
+    -fx-background-color: #45494a;
     -fx-border-color: transparent;
 }
 
@@ -336,6 +331,8 @@ StackPane,
 
 .progress-bar {
     -fx-min-height: 11px;
+    -fx-per-height: 11px;
+    -fx-max-height: 11px;
 }
 
 .progress-bar> .track {
@@ -391,7 +388,23 @@ StackPane,
 .slider:disabled> .axis> .axis-minor-tick-mark {
     -fx-stroke: #777777;
 }
-    
+
+.radio-button> .radio,
+.check-box> .box {
+    -fx-background-color: linear-gradient(to bottom, #6e6e6e, #5f5f5f);
+    -fx-border-color: #282828
+}
+
+.radio-button:focus> .radio,
+.check-box:focus> .box {
+    -fx-background-color: linear-gradient(to bottom, #787878, #4b4b4b);
+}
+
+.radio-button:focus:armed> .radio,
+.check-box:focus:armed> .box {
+    -fx-background-color: linear-gradient(to bottom, #646464, #373737);
+}
+
 .radio-button> .radio {
     -fx-border-radius: 50%;
 }
