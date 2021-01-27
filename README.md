@@ -1,8 +1,10 @@
 # JavaFXDarculaTheme
+
 JavaFX Darcula Theme
 
-## Snapshots
-![](https://raw.githubusercontent.com/wiki/mousesrc/JavaFXDarculaTheme/1.png)
-![](https://raw.githubusercontent.com/wiki/mousesrc/JavaFXDarculaTheme/2.png)
-![](https://raw.githubusercontent.com/wiki/mousesrc/JavaFXDarculaTheme/3.png)
-![](https://raw.githubusercontent.com/wiki/mousesrc/JavaFXDarculaTheme/4.png)
+## Screenshots
+
+![1](screenshots/1.png)
+![2](screenshots/2.png)
+![3](screenshots/3.png)
+![4](screenshots/4.png)
