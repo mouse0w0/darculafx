@@ -1,0 +1,31 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.novoda:bintray-release:0.9.2'
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'maven'
+apply plugin: 'maven-publish'
+apply plugin: 'com.novoda.bintray-release'
+
+group = 'com.github.mouse0w0'
+version = '1.0.0'
+
+sourceCompatibility = targetCompatibility = 1.8
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+publish {
+    userOrg = 'mouse0w0'
+    groupId = project.group
+    artifactId = 'darculafx'
+    publishVersion = project.version
+    desc = 'JavaFX Darcula theme'
+    website = 'https://github.com/mouse0w0/darculafx'
+}
