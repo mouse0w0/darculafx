@@ -1,13 +1,67 @@
 /* default setting */
 .root {
-    -darcula-background-bright: #4b6eaf; 
-    -darcula-background: #3c3f41; /*60 63 65*/
-    -darcula-background-dark: #313335; /*49 51 53*/
+    -darcula-base: #3c3f41; /*60 63 65*/
+    -darcula-focus-color: #4b6eaf; /*75 110 175*/
     -darcula-background-darkest: #2b2b2b; /*43 43 43*/
-    
+    -darcula-border-color: #646464;
+
     -darcula-text: #bbbbbb;
+    -darcula-text-input-background: #45494a; /*69 73 74*/
+    -darcula-text-highlight: #4b6baf;
     -darcula-text-disabled: #777777;
-    -darcula-text-highlight-background: #4b6baf;
+
+    /*JavaFX color palette*/
+    -fx-base: -darcula-base; /*60 63 65*/
+
+    -fx-background: -fx-base;
+
+    -fx-control-inner-background: -darcula-text-input-background;
+    -fx-control-inner-background-alt: -fx-control-inner-background;
+
+    -fx-accent: #808080;
+
+    -fx-default-button: #384f6b;
+
+    -fx-focus-color: -darcula-focus-color; /*75 110 175*/
+    -fx-faint-focus-color: transparent;
+
+    -fx-color: -fx-base;
+
+    -fx-hover-base: -fx-base;
+    -fx-pressed-base: -fx-base;
+
+    -fx-text-background-color: -darcula-text;
+
+    -fx-box-border: -darcula-border-color;
+
+    -fx-text-box-border: -fx-box-border;
+
+    -fx-shadow-highlight-color: transparent;
+    -fx-outer-border: -fx-box-border;
+    -fx-inner-border: -fx-base; /*76 80 82*/
+    -fx-inner-border-horizontal: -fx-base;
+    -fx-inner-border-bottomup: -fx-base;
+    -fx-body-color: -fx-base; /*76 80 82*/
+    -fx-body-color-bottomup: -fx-base;
+    -fx-body-color-to-right: -fx-base;
+
+    -fx-text-base-color: -fx-text-background-color;
+    -fx-text-inner-color: -fx-text-background-color;
+
+    -fx-mark-color: -fx-text-background-color;
+    -fx-mark-highlight-color: transparent;
+
+    -fx-selection-bar: -fx-focus-color;
+    -fx-selection-bar-non-focused: #0d293e;
+
+    /*-fx-cell-hover-color: unused;*/
+    -fx-cell-focus-inner-border: transparent;
+
+    /*-fx-page-bullet-border: unused;*/
+    /*-fx-page-indicator-hover-border: unused;*/
+
+    -fx-focused-text-base-color: -fx-text-background-color;
+    -fx-focused-mark-color: -fx-text-background-color;
 }
 
 .label:disabled,
