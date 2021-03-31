@@ -1,5 +1,5 @@
 # darculafx
-[![](https://img.shields.io/github/v/release/mouse0w0/darculafx)](https://github.com/Mouse0w0/darculafx/releases)
+[![Maven Central](https://img.shields.io/maven-central/v/com.github.mouse0w0/darculafx.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22com.github.mouse0w0%22%20AND%20a:%22darculafx%22)
 
 JavaFX darcula theme.
 
