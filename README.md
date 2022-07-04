@@ -3,11 +3,12 @@
 
 JavaFX darcula theme.
 
-## How to use it
+## Usage
 
-### Maven
+### 1 Add dependency
 
-Add the dependency
+<details>
+<summary>Maven</summary>
 
 ```xml
 <dependency>
@@ -16,23 +17,38 @@ Add the dependency
     <version>1.0.0</version>
 </dependency>
 ```
-### Gradle
+	
+</details>
 
-Step 1. Add the Central repository to your build file
+<details>
+<summary>Gradle</summary>
 
-Add it in your root build.gradle at the end of repositories:
-
+#### 1 Add the Central repository to your build file
 ```gradle
 	repositories {
 		mavenCentral()
 	}
 ```
 
-Step 2. Add the dependency
+#### 2 Add the dependency
 ```gradle
 	dependencies {
 	        implementation 'com.github.mouse0w0:darculafx:1.0.0'
 	}
+```
+
+	
+</details>
+
+### 2 Apply theme
+
+You can either apply the style to the scene…
+```java
+DarculaFX.applyDarculaStyle(scene);
+```
+…or apply the style to specific components.
+```java
+DarculaFX.applyDarculaStyle(button);
 ```
 
 ## Screenshots
