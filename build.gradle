@@ -20,7 +20,7 @@ javafx {
     modules = ['javafx.controls']
 }
 
-sourceCompatibility = targetCompatibility = 1.8
+sourceCompatibility = targetCompatibility = 1.9
 
 tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
