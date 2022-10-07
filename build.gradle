@@ -1,9 +1,24 @@
-apply plugin: 'java-library'
-apply plugin: 'maven-publish'
-apply plugin: 'signing'
+plugins {
+    id 'java'
+
+    id 'java-library'
+    id 'maven-publish'
+    id 'signing'
+
+    id 'org.openjfx.javafxplugin' version '0.0.13'
+}
 
 group 'com.github.mouse0w0'
-version '1.0.0'
+version '1.0.1'
+
+repositories {
+    mavenCentral()
+}
+
+javafx {
+    version = "19"
+    modules = ['javafx.controls']
+}
 
 sourceCompatibility = targetCompatibility = 1.8
 
