@@ -14,7 +14,7 @@ JavaFX darcula theme.
 <dependency>
     <groupId>com.github.mouse0w0</groupId>
     <artifactId>darculafx</artifactId>
-    <version>9.0.0</version>
+    <version>11.0.0</version>
 </dependency>
 ```
 	
@@ -33,7 +33,7 @@ JavaFX darcula theme.
 #### 2 Add the dependency
 ```gradle
 	dependencies {
-	        implementation 'com.github.mouse0w0:darculafx:9.0.0'
+	        implementation 'com.github.mouse0w0:darculafx:11.0.0'
 	}
 ```
 
