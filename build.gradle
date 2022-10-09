@@ -9,7 +9,7 @@ plugins {
 }
 
 group 'com.github.mouse0w0'
-version '1.0.1'
+version '9.0.0'
 
 repositories {
     mavenCentral()
